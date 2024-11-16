@@ -1,0 +1,108 @@
+/* Button.css */
+.taylux-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--taylux-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    border: none;
+}
+
+/* Variant colors */
+.taylux-btn--primary {
+    background-color: var(--taylux-primary);
+    color: white;
+}
+
+.taylux-btn--primary:hover {
+    background-color: var(--taylux-primary-hover);
+}
+
+.taylux-btn--secondary {
+    background-color: var(--taylux-secondary);
+    color: var(--taylux-tertiary);
+}
+
+.taylux-btn--secondary:hover {
+    background-color: var(--taylux-secondary-hover);
+}
+
+.taylux-btn--tertiary {
+    background-color: var(--taylux-tertiary);
+    color: white;
+}
+
+.taylux-btn--tertiary:hover {
+    background-color: var(--taylux-tertiary-hover);
+}
+
+.taylux-btn--danger {
+    background-color: var(--taylux-danger);
+    color: white;
+}
+
+.taylux-btn--danger:hover {
+    background-color: var(--taylux-danger-hover);
+}
+
+.taylux-btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--taylux-primary);
+    color: var(--taylux-primary);
+}
+
+.taylux-btn--outline:hover {
+    background-color: var(--taylux-secondary);
+}
+
+.taylux-btn--danger-outline {
+    background-color: transparent;
+    border: 2px solid var(--taylux-danger);
+    color: var(--taylux-danger);
+}
+
+.taylux-btn--danger-outline:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.taylux-btn--ghost {
+    background-color: var(--taylux-ghost);
+    color: var(--taylux-tertiary);
+}
+
+.taylux-btn--ghost:hover {
+    background-color: var(--taylux-ghost-hover);
+}
+
+/* Variant size */
+.taylux-btn--sm {
+    height: var(--taylux-size-sm);
+    padding: var(--taylux-spacing-sm);
+    font-size: var(--taylux-font-sm);
+}
+
+.taylux-btn--md {
+    height: var(--taylux-size-md);
+    padding: var(--taylux-spacing-md);
+    font-size: var(--taylux-font-md);
+}
+
+.taylux-btn--lg {
+    height: var(--taylux-size-lg);
+    padding: var(--taylux-spacing-lg);
+    font-size: var(--taylux-font-lg);
+}
+
+/* Disabled state */
+.taylux-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Focus state */
+.taylux-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
