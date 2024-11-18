@@ -1,4 +1,4 @@
-import { ButtonProps } from "../types";
+import { ButtonProps } from '../../types/Button/button';
 
 export interface ReactButtonProps extends ButtonProps {
     children: React.ReactNode;
@@ -6,29 +6,28 @@ export interface ReactButtonProps extends ButtonProps {
     className?: string;
 }
 
-export default function TayluxButton({
-    variant = "primary",
-    size = "md",
+export const TayluxButton = ({
+    variant = 'primary',
+    size = 'md',
     disabled = false,
     children,
     onClick,
-    className = "",
-    ...props
-}: ReactButtonProps) {
-    const baseClass = "taylux-btn";
+    className = '',
+}: ReactButtonProps) => {
+    const baseClass = 'taylux-btn';
     const classes = [
         baseClass,
         `${baseClass}--${variant}`,
         `${baseClass}--${size}`,
-        disabled ? `${baseClass}--disabled` : "",
+        disabled ? `${baseClass}--disabled` : '',
         className,
     ]
         .filter(Boolean)
-        .join(" ");
+        .join(' ');
 
     return (
-        <button className={classes} disabled={disabled} onClick={onClick} {...props}>
+        <button className={classes} disabled={disabled} onClick={onClick}>
             {children}
         </button>
     );
-}
+};

@@ -1,4 +1,4 @@
-import "./styles/index.css";
+import './styles/index.css';
 
-export { default as Button } from "./components/TayluxButton";
-export type { ReactButtonProps } from "./components/TayluxButton";
+export { TayluxButton } from './components/Button/TayluxButton';
+export type { ReactButtonProps } from './components/Button/TayluxButton';

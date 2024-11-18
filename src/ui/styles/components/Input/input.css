@@ -1,0 +1,45 @@
+.taylux-input {
+    width: 100%;
+    border-radius: var(--taylux-radius);
+    border: 1px solid var(--taylux-secondary-hover);
+    background-color: white;
+    color: var(--taylux-tertiary);
+    transition: all 0.2s ease;
+}
+
+.taylux-input:focus {
+    outline: none;
+    border-color: var(--taylux-primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1); /* Couleur basée sur --taylux-primary */
+}
+
+.taylux-input:disabled {
+    background-color: var(--taylux-secondary);
+    border-color: var(--taylux-secondary-hover);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.taylux-input::placeholder {
+    color: var(--taylux-tertiary);
+    opacity: 0.7;
+}
+
+/* Tailles */
+.taylux-input-sm {
+    height: var(--taylux-size-sm);
+    padding: var(--taylux-spacing-sm);
+    font-size: var(--taylux-font-sm);
+}
+
+.taylux-input-md {
+    height: var(--taylux-size-md);
+    padding: var(--taylux-spacing-md);
+    font-size: var(--taylux-font-md);
+}
+
+.taylux-input-lg {
+    height: var(--taylux-size-lg);
+    padding: var(--taylux-spacing-lg);
+    font-size: var(--taylux-font-lg);
+}

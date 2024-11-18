@@ -1,48 +1,48 @@
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
     plugins: [
         react(),
         dts({
-            include: ["src/ui/**/*.ts", "src/ui/**/*.tsx"],
-            outDir: "dist/types",
+            include: ['src/ui/**/*.ts', 'src/ui/**/*.tsx'],
+            outDir: 'dist/types',
         }),
     ],
     build: {
         lib: {
-            entry: resolve(__dirname, "src/ui/index.ts"),
-            name: "taylux",
+            entry: resolve(__dirname, 'src/ui/index.ts'),
+            name: 'taylux',
             fileName: (format) => `taylux.${format}.js`,
         },
         rollupOptions: {
-            external: ["react", "react-dom"],
+            external: ['react', 'react-dom'],
             output: [
                 {
-                    format: "es",
-                    exports: "named",
+                    format: 'es',
+                    exports: 'named',
                     globals: {
-                        react: "React",
-                        "react-dom": "ReactDOM",
+                        react: 'React',
+                        'react-dom': 'ReactDOM',
                     },
-                    assetFileNames: "assets/[name][extname]",
+                    assetFileNames: 'assets/[name][extname]',
                 },
                 {
-                    format: "umd",
-                    name: "taylux",
-                    exports: "named",
+                    format: 'umd',
+                    name: 'taylux',
+                    exports: 'named',
                     globals: {
-                        react: "React",
-                        "react-dom": "ReactDOM",
+                        react: 'React',
+                        'react-dom': 'ReactDOM',
                     },
-                    assetFileNames: "assets/[name][extname]",
+                    assetFileNames: 'assets/[name][extname]',
                 },
             ],
         },
         sourcemap: false,
-        minify: "terser",
+        minify: 'terser',
         terserOptions: {
             compress: {
                 drop_console: true,
@@ -51,8 +51,5 @@ export default defineConfig({
         },
         reportCompressedSize: true,
         chunkSizeWarningLimit: 1000,
-    },
-    optimizeDeps: {
-        exclude: ["react", "react-dom"],
     },
 });
